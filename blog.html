@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Блог - MarieRichardOnline.com</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="wrapper">
+
+  <div id="header">
+    <h1>♫ Marie Richard Online ♫</h1>
+    <div class="tagline">*~ твой лучший источник новостей о Мари с 2001 года ~*</div>
+  </div>
+
+  <div class="marquee-bar">
+    ☆ ☆ ☆ &nbsp; добро пожаловать на MRO — не забудь подписать гостевую книгу!! &nbsp; ☆ ☆ ☆
+  </div>
+  <table id="navbar">
+    <tr>
+      <td><a href="index.html">Главная</a></td>
+      <td><a href="about.html">О Мари</a></td>
+      <td><a href="news.html">Новости</a></td>
+      <td><a href="discography.html">Дискография</a></td>
+      <td><a href="gallery.html">Галерея</a></td>
+      <td><a href="poll.html">Опросы</a></td>
+      <td><a href="faq.html">FAQ</a></td>
+      <td class="nav-current"><a href="blog.html">Блог</a></td>
+      <td><a href="guestbook.html">Гостевая</a></td>
+      <td><a href="contact.html">Контакты</a></td>
+    </tr>
+  </table>
+
+  <div id="content">
+
+    <table id="layout-table">
+      <tr>
+        <td id="sidebar">
+          <h3>★ О сайте</h3>
+          <p>Онлайн с: 14 марта 2001<br>
+          Вебмастер: [твой ник]<br>
+          Лучше всего смотреть в 800x600</p>
+
+          <h3>★ Последнее обновление</h3>
+          <p>14.03.2001 — добавлены новые фото в галерею!</p>
+
+          <h3>★ Опрос недели</h3>
+          <div class="mini-poll">
+            <p style="margin:0 0 4px 0;"><b>Какой альбом Мари твой любимый?</b></p>
+            <form>
+              <label><input type="radio" name="minipoll"> [Альбом 1]</label>
+              <label><input type="radio" name="minipoll"> [Альбом 2]</label>
+              <label><input type="radio" name="minipoll"> [Альбом 3]</label>
+              <label><input type="radio" name="minipoll"> [Альбом 4]</label>
+              <input type="submit" value="Голосовать">
+            </form>
+            <a class="mini-archive-link" href="poll.html">→ архив опросов / результаты</a>
+          </div>
+
+          <h3>★ Ссылки</h3>
+          <div class="mini-links">
+            <b style="color:#ffff66; font-size:11px;">Официальные:</b>
+            <a href="#">Сайт Мари</a>
+            <a href="#">Страница лейбла</a>
+            <b style="color:#ffff66; font-size:11px;">Партнёры:</b>
+            <div class="button88">[Fansite<br>Name]</div>
+            <div class="button88">[Fansite<br>Name]</div>
+          </div>
+        </td>
+
+        <td id="main-col">
+          <h2>Блог вебмастера ♥</h2>
+          <div class="content-box">
+            <p><i>Это мой личный дневник как админа сайта — тут я пишу о том, что происходит с MRO, делюсь мыслями о Мари и просто болтаю с вами! Официальные новости о самой Мари смотрите в разделе <a href="news.html">Новости</a>.</i></p>
+          </div>
+
+          <div class="post">
+            <div class="post-title">сайт наконец-то запущен!!! ٩(◕‿◕)۶</div>
+            <div class="post-meta">14.03.2001 | настроение: взволнована | слушаю: [трек Мари]</div>
+            <p>Привееет всем! После почти месяца вёрстки по ночам сайт наконец готов ♥ Извините если где-то ещё кривовато, я всё ещё разбираюсь с таблицами хддд. Расскажите в гостевой что думаете!!</p>
+          </div>
+
+          <div class="post">
+            <div class="post-title">почему я вообще начала этот сайт</div>
+            <div class="post-meta">10.03.2001 | настроение: ностальгическая</div>
+            <p>[Место для личной истории — как ты открыла для себя Мари, почему решила сделать фан-сайт, что тебя вдохновило]</p>
+          </div>
+
+          <div class="post">
+            <div class="post-title">домашнее задание не ждёт но кого это волнует</div>
+            <div class="post-meta">05.03.2001 | настроение: сонная</div>
+            <p>[Место для повседневных заметок вебмастера — жизнь, учёба/работа, реакция на новый клип и т.д. — весь этот дневниковый формат ранних 2000х]</p>
+          </div>
+
+          <div class="sparkle-divider">✦ ✧ ✦ ✧ ✦</div>
+          <p style="text-align:center; font-size:11px;">архив записей: <a href="#">март 2001</a></p>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div id="footer">
+    <p>© 2001 MarieRichardOnline.com — фан-сайт, создан не в коммерческих целях.<br>
+    Все фото принадлежат их правообладателям.</p>
+    <p>вы посетитель номер <span class="counter">003417</span></p>
+    <p><a href="contact.html">Контакты</a></p>
+  </div>
+
+</div>
+<script type="module">
+  import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+  new fairyDustCursor({
+    colors: ["#ff66cc", "#ffff66", "#66ffff", "#cc99ff"],
+    fairySymbol: "★"
+  });
+</script>
+</body>
+</html>

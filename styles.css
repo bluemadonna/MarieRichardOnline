@@ -1,0 +1,343 @@
+/* ===================================================
+   MarieRichardOnline.com — Site Stylesheet
+   best viewed in 800x600, Internet Explorer 5.5+
+   =================================================== */
+
+html {
+  background-color: #05001f;
+}
+
+body {
+  background-color: #0a0034;
+  background-image: url('images/bg_stars.gif');
+  color: #d9d2ff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 22px 0 30px 0;
+}
+
+a:link { color: #66ffff; }
+a:visited { color: #cc99ff; }
+a:hover { color: #ffff66; text-decoration: underline; }
+a:active { color: #ff66cc; }
+
+/* ---------- page wrapper / table layout ---------- */
+#wrapper {
+  width: 760px;
+  margin: 0 auto;
+  border: 4px ridge #9966ff;
+  background-color: #140a3c;
+  padding: 0;
+}
+
+/* ---------- header / logo ---------- */
+#header {
+  text-align: center;
+  padding: 10px 0 4px 0;
+  background: #1a0a4a;
+  border-bottom: 3px ridge #9966ff;
+}
+
+#header h1 {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 40px;
+  color: #ff66cc;
+  text-shadow: 2px 2px 0 #330066;
+  margin: 6px 0 0 0;
+  letter-spacing: 1px;
+}
+
+#header .tagline {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 13px;
+  color: #ffff99;
+  margin-bottom: 8px;
+}
+
+#header .blink {
+  color: #ff3399;
+  font-weight: bold;
+}
+
+/* ---------- marquee bar ---------- */
+.marquee-bar {
+  background: #330066;
+  color: #ffff66;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 12px;
+  padding: 3px 0;
+  border-top: 1px solid #9966ff;
+  border-bottom: 1px solid #9966ff;
+}
+
+/* ---------- nav table ---------- */
+#navbar {
+  width: 100%;
+  background-color: #1a0a4a;
+  border-collapse: collapse;
+  border-bottom: 3px ridge #9966ff;
+}
+
+#navbar td {
+  text-align: center;
+  padding: 6px 4px;
+  border-right: 1px dashed #6633cc;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+#navbar td:last-child { border-right: none; }
+
+#navbar a {
+  text-decoration: none;
+  padding: 2px 4px;
+}
+
+#navbar a:hover {
+  background-color: #ff66cc;
+  color: #140a3c !important;
+}
+
+.nav-current {
+  background-color: #440088;
+  color: #ffff66 !important;
+}
+
+/* ---------- main content area ---------- */
+#content {
+  padding: 16px 24px;
+  background-color: #140a3c;
+  background-image: url('images/bg_content_sparkle.gif');
+  min-height: 300px;
+}
+
+#content h2 {
+  font-family: "Comic Sans MS", cursive;
+  color: #ffff66;
+  border-bottom: 2px dotted #9966ff;
+  padding-bottom: 4px;
+}
+
+#content h3 {
+  color: #ff99ff;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 16px;
+}
+
+.content-box {
+  background-color: #1a0a4a;
+  border: 2px solid #6633cc;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.sparkle-divider {
+  text-align: center;
+  color: #ff66cc;
+  letter-spacing: 6px;
+  margin: 14px 0;
+}
+
+/* ---------- sidebar (used on some pages) ---------- */
+#layout-table { width: 100%; border-collapse: collapse; }
+#sidebar {
+  width: 180px;
+  vertical-align: top;
+  background-color: #1a0a4a;
+  border-right: 2px dashed #6633cc;
+  padding: 10px;
+  font-size: 12px;
+}
+#sidebar h3 {
+  font-family: "Comic Sans MS", cursive;
+  color: #ffff66;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+#main-col { vertical-align: top; padding: 14px; }
+
+/* ---------- sidebar: mini poll widget ---------- */
+.mini-poll {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.mini-poll label {
+  display: block;
+  margin: 3px 0;
+  color: #d9d2ff;
+}
+.mini-poll input[type="submit"] {
+  margin-top: 6px;
+  background: #ff66cc;
+  color: #330066;
+  font-weight: bold;
+  border: 2px outset #ff99dd;
+  padding: 2px 10px;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 11px;
+  cursor: pointer;
+}
+.mini-archive-link {
+  font-size: 11px;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ---------- sidebar: mini links ---------- */
+.mini-links {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.mini-links a { display: block; }
+
+/* ---------- buttons / affiliate 88x31 ---------- */
+.button88 {
+  width: 88px;
+  height: 31px;
+  border: 1px solid #9966ff;
+  background: #330066;
+  display: inline-block;
+  text-align: center;
+  font-size: 9px;
+  color: #66ffff;
+  vertical-align: middle;
+  margin: 3px;
+}
+
+/* ---------- guestbook ---------- */
+.gb-entry {
+  background-color: #1a0a4a;
+  border: 1px dashed #9966ff;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+.gb-name {
+  color: #66ffff;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive;
+}
+.gb-date {
+  color: #9999cc;
+  font-size: 11px;
+}
+.gb-form {
+  background-color: #0a0034;
+  border: 2px ridge #9966ff;
+  padding: 12px;
+  margin-top: 16px;
+}
+.gb-form label {
+  display: block;
+  margin-top: 6px;
+  color: #ffff66;
+  font-size: 12px;
+}
+.gb-form input[type="text"],
+.gb-form input[type="email"],
+.gb-form textarea {
+  width: 95%;
+  background: #140a3c;
+  color: #d9d2ff;
+  border: 1px solid #9966ff;
+  font-family: "Times New Roman", serif;
+  padding: 3px;
+}
+.gb-form input[type="submit"] {
+  margin-top: 8px;
+  background: #ff66cc;
+  color: #330066;
+  font-weight: bold;
+  border: 2px outset #ff99dd;
+  padding: 4px 14px;
+  font-family: "Comic Sans MS", cursive;
+  cursor: pointer;
+}
+
+/* ---------- gallery ---------- */
+.gallery-grid {
+  display: table;
+  width: 100%;
+}
+.gallery-row { display: table-row; }
+.thumb {
+  display: table-cell;
+  width: 33%;
+  padding: 6px;
+  text-align: center;
+  vertical-align: top;
+}
+.thumb img {
+  border: 3px solid #6633cc;
+  width: 150px;
+  height: 110px;
+}
+.thumb .cap {
+  font-size: 11px;
+  color: #ffff99;
+  margin-top: 2px;
+}
+
+/* ---------- blog / news posts ---------- */
+.post {
+  border-bottom: 1px dashed #6633cc;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.post-title {
+  font-family: "Comic Sans MS", cursive;
+  color: #ffff66;
+  font-size: 15px;
+}
+.post-meta {
+  font-size: 11px;
+  color: #9999cc;
+  margin-bottom: 6px;
+}
+
+/* ---------- footer ---------- */
+#footer {
+  text-align: center;
+  font-size: 10px;
+  color: #8877bb;
+  padding: 10px;
+  border-top: 3px ridge #9966ff;
+  background: #1a0a4a;
+}
+
+#footer .counter {
+  background: #000;
+  color: #0f0;
+  font-family: "Courier New", monospace;
+  padding: 2px 6px;
+  border: 1px solid #333;
+  letter-spacing: 2px;
+}
+
+table.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+table.info-table td, table.info-table th {
+  border: 1px solid #6633cc;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+table.info-table th {
+  background: #330066;
+  color: #ffff66;
+  font-family: "Comic Sans MS", cursive;
+}
+table.info-table td { background: #1a0a4a; }
+
+.under-construction {
+  text-align: center;
+  margin: 10px 0;
+  font-family: "Comic Sans MS", cursive;
+  color: #ffcc00;
+  font-size: 11px;
+  border: 2px dashed #ffcc00;
+  padding: 6px;
+}
