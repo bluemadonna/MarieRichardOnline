@@ -33,6 +33,11 @@
       </div>
 
       <p style="font-size:11px; color:#a9698f;">Голосование анонимное, без аккаунтов — можно проголосовать сколько угодно раз (мини-опрос в правом блоке считает те же голоса).</p>
+
+      <div class="sparkle-divider">✦ ✧ ✦ ✧ ✦</div>
+
+      <h3>★ Архив прошлых опросов</h3>
+      <div id="poll-archive"></div>
     </div>
 
     <div id="rightbar"><div id="site-rightbar"></div></div>
@@ -48,6 +53,15 @@
 <script src="include.js"></script>
 <script>
 MRO.initFullPoll('favorite-album','poll-results');
+
+// Архив прошлых опросов — реальные результаты из базы.
+// Когда решишь завершить текущий опрос и запустить новый:
+// 1) добавь сюда старый вопрос с его poll_id
+// 2) смени значение favorite-album выше (и в rightbar.html) на новый poll_id + новый вопрос/варианты
+var pastPolls = [
+  // { id: 'старый-poll-id', question: 'Текст прошлого вопроса' },
+];
+MRO.renderPollArchive('poll-archive', pastPolls);
 </script>
   <script type="module">
     import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";

@@ -94,6 +94,25 @@ var MRO = (function () {
     loadPollResults(pollId, document.getElementById(resultsElId));
   }
 
+  // список закрытых опросов для архива: [{id: 'poll-id', question: 'текст вопроса'}, ...]
+  function renderPollArchive(containerId, polls) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    if (!polls || polls.length === 0) {
+      container.innerHTML = '<p style="font-size:12px; color:#a9698f;"><i>архив пока пуст — сюда попадут завершённые опросы</i></p>';
+      return;
+    }
+    container.innerHTML = "";
+    polls.forEach(function (poll, i) {
+      var box = document.createElement("div");
+      box.className = "content-box";
+      var resultsId = "archive-results-" + i;
+      box.innerHTML = "<p style='margin:0 0 4px 0;'><b>" + escapeHtml(poll.question) + "</b></p><div id='" + resultsId + "'></div>";
+      container.appendChild(box);
+      loadPollResults(poll.id, box.querySelector("#" + resultsId));
+    });
+  }
+
   // ---------- GUESTBOOK ----------
 
   function loadGuestbook(listElId) {
@@ -165,6 +184,7 @@ var MRO = (function () {
     submitMiniVote: submitMiniVote,
     initFullPoll: initFullPoll,
     submitFullVote: submitFullVote,
+    renderPollArchive: renderPollArchive,
     loadGuestbook: loadGuestbook,
     submitGuestbookEntry: submitGuestbookEntry
   };

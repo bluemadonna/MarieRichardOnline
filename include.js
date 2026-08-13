@@ -47,6 +47,11 @@ function applyStoredLang() {
   setLang(saved);
 }
 
+function toggleMenu() {
+  var list = document.querySelector("#leftbar .menu-list");
+  if (list) list.classList.toggle("menu-open");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   loadInclude("site-header", "header.html", applyStoredLang);
   loadInclude("site-leftbar", "leftbar.html", function () {

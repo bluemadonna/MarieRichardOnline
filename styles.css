@@ -148,6 +148,18 @@ body.lang-ru [data-lang="en"] { display: none !important; }
 }
 
 /* ---------- left column: menu ---------- */
+#leftbar .menu-toggle {
+  display: none;
+  width: 100%;
+  background: var(--pink-bar);
+  color: #fff;
+  border: none;
+  padding: 9px;
+  font-family: 'Baloo 2', cursive;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+}
 #leftbar .menu-list {
   list-style: none;
   margin: 0;
@@ -288,6 +300,50 @@ table.info-table td { background: #fff; }
 .under-construction { text-align: center; margin: 12px 0; }
 .under-construction img { max-width: 100%; border: 2px solid var(--pink-bar); }
 
+/* ---------- lightbox ---------- */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 16, 53, 0.55);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.lightbox-overlay.open { display: flex; }
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.lightbox-content img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.lightbox-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 34px;
+  height: 34px;
+  background: var(--pink-bar);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Baloo 2', cursive;
+  user-select: none;
+}
+.lightbox-close:hover { background: #a01050; }
+
 /* ---------- footer ---------- */
 #footer { text-align: center; font-size: 10px; color: #a9698f; padding: 10px; border-top: 2px solid var(--pink-border); background: #fff; }
 
@@ -297,8 +353,18 @@ table.info-table td { background: #fff; }
 @media (max-width: 800px) {
   body { font-size: 14px; padding: 12px 8px 24px 8px; }
   #header h1 { font-size: 28px; }
-  #page-grid { display: block; padding: 10px; }
+
+  #page-grid { display: flex; flex-direction: column; padding: 10px; }
   #leftbar, #rightbar, #main-col { width: 100%; box-sizing: border-box; }
+  #main-col { order: 1; }
+  #leftbar { order: 2; }
+  #rightbar { order: 3; }
+
+  /* меню сворачивается за кнопку на мобильных */
+  #leftbar .menu-toggle { display: block; }
+  #leftbar .menu-list { display: none; }
+  #leftbar .menu-list.menu-open { display: block; }
+
   .thumb img { width: 100%; height: auto; max-width: 320px; }
   table.info-table, table.info-table tbody, table.info-table tr, table.info-table th, table.info-table td {
     display: block; width: 100%; box-sizing: border-box;
