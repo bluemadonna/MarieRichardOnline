@@ -61,18 +61,12 @@ MRO.initFullPoll('favorite-album','poll-results');
 // 2) смени значение favorite-album выше (и в rightbar.html) на новый poll_id + новый вопрос/варианты
 var pastPolls = [
   // { id: 'старый-poll-id', question: 'Текст прошлого вопроса' },
-     { id: 'fave-single-feb2001', question: 'Любимый сингл с дебютного альбома?' },
-	 { id: 'fave-look-feb2001', question: 'Любимый лук за 2001 год?' },
+  { id: 'fave-single-feb2001', question: 'Любимый сингл с дебютного альбома?' },
+  { id: 'fave-look-feb2001', question: 'Любимый лук за 2001 год?' },
 ];
 MRO.renderPollArchive('poll-archive', pastPolls);
 </script>
-  <script type="module">
-    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
-    new fairyDustCursor({
-      colors: ["#ff2d95", "#fff34d", "#ff8fc7", "#c2185b"],
-      fairySymbol: "★"
-    });
-  </script>
+<script type="module" src="js/cursor.js"></script>
 
 </body>
 </html>
