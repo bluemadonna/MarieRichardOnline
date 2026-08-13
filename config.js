@@ -1,11 +1,4 @@
-// ===================================================
-// config.js — сюда вписываешь свои данные из Supabase
-// (Project Settings → API → Project URL и anon public key)
-//
-// Пока значения не заполнены, опрос и гостевая книга
-// будут работать в демо-режиме (показывать заглушку
-// вместо реальных данных).
-// ===================================================
+// подключение к Supabase //
 
-const SUPABASE_URL = "";
-const SUPABASE_ANON_KEY = "";
+const SUPABASE_URL = "https://sapewogjqjthxbcxbjgt.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhcGV3b2dqcWp0aHhiY3hiamd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1NzU4NTIsImV4cCI6MjEwMjE1MTg1Mn0.w9HRqCmoMY0w2QtusG9B7kVWCz8ylbnMyD9eCdEBFlo";
