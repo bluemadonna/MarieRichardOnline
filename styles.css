@@ -148,18 +148,7 @@ body.lang-ru [data-lang="en"] { display: none !important; }
 }
 
 /* ---------- left column: menu ---------- */
-#leftbar .menu-toggle {
-  display: none;
-  width: 100%;
-  background: var(--pink-bar);
-  color: #fff;
-  border: none;
-  padding: 9px;
-  font-family: 'Baloo 2', cursive;
-  font-size: 13px;
-  cursor: pointer;
-  text-align: left;
-}
+.menu-hamburger { display: none; margin-right: 5px; }
 #leftbar .menu-list {
   list-style: none;
   margin: 0;
@@ -360,8 +349,9 @@ table.info-table td { background: #fff; }
   #main-col { order: 2; }
   #rightbar { order: 3; }
 
-  /* меню сворачивается за кнопку на мобильных */
-  #leftbar .menu-toggle { display: block; }
+  /* меню сворачивается за заголовком на мобильных */
+  .menu-hamburger { display: inline; }
+  #leftbar .menu-title { cursor: pointer; }
   #leftbar .menu-list { display: none; }
   #leftbar .menu-list.menu-open { display: block; }
 
