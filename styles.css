@@ -356,8 +356,8 @@ table.info-table td { background: #fff; }
 
   #page-grid { display: flex; flex-direction: column; padding: 10px; }
   #leftbar, #rightbar, #main-col { width: 100%; box-sizing: border-box; }
-  #main-col { order: 1; }
-  #leftbar { order: 2; }
+  #leftbar { order: 1; }
+  #main-col { order: 2; }
   #rightbar { order: 3; }
 
   /* меню сворачивается за кнопку на мобильных */
