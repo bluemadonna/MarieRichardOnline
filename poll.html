@@ -2,123 +2,60 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Опросы - MarieRichardOnline.com</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="lang-ru">
 <div id="wrapper">
 
-  <div id="header">
-    <h1>♫ Marie Richard Online ♫</h1>
-    <div class="tagline">*~ твой лучший источник новостей о Мари с 2001 года ~*</div>
+  <div id="site-header"></div>
+
+  <div id="page-grid">
+    <div id="leftbar"><div id="site-leftbar"></div></div>
+
+    <div id="main-col">
+      <h2>Опросы ♥</h2>
+
+      <div class="content-box">
+        <h3 style="margin-top:0;">Опрос недели: какой альбом Мари твой любимый?</h3>
+        <div id="poll-full-options">
+          <p><label><input type="radio" name="pollfull" value="Album 1"> [Album 1]</label></p>
+          <p><label><input type="radio" name="pollfull" value="Album 2"> [Album 2]</label></p>
+          <p><label><input type="radio" name="pollfull" value="Album 3"> [Album 3]</label></p>
+          <p><label><input type="radio" name="pollfull" value="Album 4"> [Album 4]</label></p>
+        </div>
+        <button type="button" onclick="MRO.submitFullVote('favorite-album','pollfull','poll-results')"
+          style="background:var(--pink-bar); color:#fff; font-weight:bold; border:none; border-radius:3px; padding:6px 16px; font-family:'Baloo 2',cursive; cursor:pointer;">
+          Голосовать!
+        </button>
+        <div id="poll-results" style="margin-top:10px; font-size:12px;"></div>
+      </div>
+
+      <p style="font-size:11px; color:#a9698f;">Голосование анонимное, без аккаунтов — можно проголосовать сколько угодно раз (мини-опрос в правом блоке считает те же голоса).</p>
+    </div>
+
+    <div id="rightbar"><div id="site-rightbar"></div></div>
   </div>
 
-  <div class="marquee-bar">
-    ☆ ☆ ☆ &nbsp; добро пожаловать на MRO — не забудь подписать гостевую книгу!! &nbsp; ☆ ☆ ☆
-  </div>
-  <table id="navbar">
-    <tr>
-      <td><a href="index.html">Главная</a></td>
-      <td><a href="about.html">О Мари</a></td>
-      <td><a href="news.html">Новости</a></td>
-      <td><a href="discography.html">Дискография</a></td>
-      <td><a href="gallery.html">Галерея</a></td>
-      <td class="nav-current"><a href="poll.html">Опросы</a></td>
-      <td><a href="faq.html">FAQ</a></td>
-      <td><a href="blog.html">Блог</a></td>
-      <td><a href="guestbook.html">Гостевая</a></td>
-      <td><a href="contact.html">Контакты</a></td>
-    </tr>
-  </table>
-
-  <div id="content">
-
-    <table id="layout-table">
-      <tr>
-        <td id="sidebar">
-          <h3>★ О сайте</h3>
-          <p>Онлайн с: 14 марта 2001<br>
-          Вебмастер: [твой ник]<br>
-          Лучше всего смотреть в 800x600</p>
-
-          <h3>★ Последнее обновление</h3>
-          <p>14.03.2001 — добавлены новые фото в галерею!</p>
-
-          <h3>★ Опрос недели</h3>
-          <div class="mini-poll">
-            <p style="margin:0 0 4px 0;"><b>Какой альбом Мари твой любимый?</b></p>
-            <form>
-              <label><input type="radio" name="minipoll"> [Альбом 1]</label>
-              <label><input type="radio" name="minipoll"> [Альбом 2]</label>
-              <label><input type="radio" name="minipoll"> [Альбом 3]</label>
-              <label><input type="radio" name="minipoll"> [Альбом 4]</label>
-              <input type="submit" value="Голосовать">
-            </form>
-            <a class="mini-archive-link" href="poll.html">→ архив опросов / результаты</a>
-          </div>
-
-          <h3>★ Ссылки</h3>
-          <div class="mini-links">
-            <b style="color:#ffff66; font-size:11px;">Официальные:</b>
-            <a href="#">Сайт Мари</a>
-            <a href="#">Страница лейбла</a>
-            <b style="color:#ffff66; font-size:11px;">Партнёры:</b>
-            <div class="button88">[Fansite<br>Name]</div>
-            <div class="button88">[Fansite<br>Name]</div>
-          </div>
-        </td>
-
-        <td id="main-col">
-          <h2>Опросы ♥</h2>
-
-          <div class="content-box">
-            <h3 style="margin-top:0;">Опрос недели: какой альбом Мари твой любимый?</h3>
-            <form>
-              <p><input type="radio" name="pollfull" id="p1"> <label for="p1">[Альбом 1]</label></p>
-              <p><input type="radio" name="pollfull" id="p2"> <label for="p2">[Альбом 2]</label></p>
-              <p><input type="radio" name="pollfull" id="p3"> <label for="p3">[Альбом 3]</label></p>
-              <p><input type="radio" name="pollfull" id="p4"> <label for="p4">[Альбом 4]</label></p>
-              <p><input type="submit" value="Голосовать!" style="background:#ff66cc; color:#330066; font-weight:bold; border:2px outset #ff99dd; padding:4px 14px; font-family:'Comic Sans MS',cursive; cursor:pointer;"></p>
-            </form>
-          </div>
-
-          <h3>★ Текущие результаты</h3>
-          <table class="info-table">
-            <tr><th>Вариант</th><th>Голосов</th><th>%</th></tr>
-            <tr><td>[Альбом 1]</td><td>142</td><td>38%</td></tr>
-            <tr><td>[Альбом 2]</td><td>98</td><td>26%</td></tr>
-            <tr><td>[Альбом 3]</td><td>81</td><td>21%</td></tr>
-            <tr><td>[Альбом 4]</td><td>56</td><td>15%</td></tr>
-          </table>
-          <p style="font-size:11px; color:#9999cc;">всего голосов: 377 | опрос обновляется каждую неделю. Мини-версию этого опроса также можно найти в блоке слева на любой странице сайта.</p>
-
-          <div class="sparkle-divider">✦ ✧ ✦ ✧ ✦</div>
-
-          <h3>★ Архив прошлых опросов</h3>
-          <p style="font-size:12px;">
-            <a href="#">Какой сингл лучше всего заходит на радио?</a><br>
-            <a href="#">Какой стиль/образ Мари тебе нравится больше всего?</a>
-          </p>
-        </td>
-      </tr>
-    </table>
-
-  </div>
-
-  <div id="footer">
-    <p>© 2001 MarieRichardOnline.com — фан-сайт, создан не в коммерческих целях.<br>
-    Все фото принадлежат их правообладателям.</p>
-    <p>вы посетитель номер <span class="counter">003417</span></p>
-    <p><a href="contact.html">Контакты</a></p>
-  </div>
+  <div id="site-footer"></div>
 
 </div>
-<script type="module">
-  import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
-  new fairyDustCursor({
-    colors: ["#ff66cc", "#ffff66", "#66ffff", "#cc99ff"],
-    fairySymbol: "★"
-  });
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="mro-data.js"></script>
+<script src="include.js"></script>
+<script>
+MRO.initFullPoll('favorite-album','poll-results');
 </script>
+  <script type="module">
+    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    new fairyDustCursor({
+      colors: ["#ff2d95", "#fff34d", "#ff8fc7", "#c2185b"],
+      fairySymbol: "★"
+    });
+  </script>
+
 </body>
 </html>

@@ -2,167 +2,88 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Галерея - MarieRichardOnline.com</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="lang-ru">
 <div id="wrapper">
 
-  <div id="header">
-    <h1>♫ Marie Richard Online ♫</h1>
-    <div class="tagline">*~ твой лучший источник новостей о Мари с 2001 года ~*</div>
+  <div id="site-header"></div>
+
+  <div id="page-grid">
+    <div id="leftbar"><div id="site-leftbar"></div></div>
+
+    <div id="main-col">
+      <h2>Галерея ♥</h2>
+      <div class="content-box">
+        <p>Все фото кликабельны — открывают полный размер. Пожалуйста, не выкладывай фото с этого сайта на других сайтах без ссылки на MRO! Новые фото добавляются каждую неделю (ну, я стараюсь ;)).</p>
+      </div>
+
+      <h3>★ Категории</h3>
+      <p style="font-size:12px;">
+        <a href="#photoshoots">Фотосессии</a> &middot;
+        <a href="#concerts">Концерты</a> &middot;
+        <a href="#events">Мероприятия / премии</a> &middot;
+        <a href="#candids">Кэндиды</a> &middot;
+        <a href="#scans">Сканы из журналов</a>
+      </p>
+
+      <div class="sparkle-divider">✦ ✧ ✦ ✧ ✦</div>
+
+      <a name="photoshoots"></a>
+      <h3>Фотосессии</h3>
+      <div class="gallery-grid">
+        <div class="gallery-row">
+          <div class="thumb"><a href="images/photo1_full.jpg"><img src="images/photo1_thumb.jpg" alt="Мари, фотосессия 1"></a><div class="cap">фотосессия, 2001</div></div>
+          <div class="thumb"><a href="images/photo2_full.jpg"><img src="images/photo2_thumb.jpg" alt="Мари, фотосессия 2"></a><div class="cap">обложка журнала</div></div>
+          <div class="thumb"><a href="images/photo3_full.jpg"><img src="images/photo3_thumb.jpg" alt="Мари, фотосессия 3"></a><div class="cap">промо-фото альбома</div></div>
+        </div>
+      </div>
+
+      <a name="concerts"></a>
+      <h3>Концерты</h3>
+      <div class="gallery-grid">
+        <div class="gallery-row">
+          <div class="thumb"><a href="images/concert1_full.jpg"><img src="images/concert1_thumb.jpg" alt="Концерт 1"></a><div class="cap">тур, весна 2001</div></div>
+          <div class="thumb"><a href="images/concert2_full.jpg"><img src="images/concert2_thumb.jpg" alt="Концерт 2"></a><div class="cap">выступление на фестивале</div></div>
+          <div class="thumb"><a href="images/concert3_full.jpg"><img src="images/concert3_thumb.jpg" alt="Концерт 3"></a><div class="cap">с бэк-вокалистками</div></div>
+        </div>
+      </div>
+
+      <a name="events"></a>
+      <h3>Мероприятия / премии</h3>
+      <div class="gallery-grid">
+        <div class="gallery-row">
+          <div class="thumb"><a href="images/event1_full.jpg"><img src="images/event1_thumb.jpg" alt="Мероприятие 1"></a><div class="cap">на красной дорожке</div></div>
+          <div class="thumb"><a href="images/event2_full.jpg"><img src="images/event2_thumb.jpg" alt="Мероприятие 2"></a><div class="cap">церемония награждения</div></div>
+          <div class="thumb"><a href="images/event3_full.jpg"><img src="images/event3_thumb.jpg" alt="Мероприятие 3"></a><div class="cap">интервью для ТВ</div></div>
+        </div>
+      </div>
+
+      <a name="candids"></a>
+      <h3>Кэндиды / Сканы из журналов</h3>
+      <div class="under-construction"><img src="images/under_construction.gif" alt="раздел в разработке"></div>
+    </div>
+
+    <div id="rightbar"><div id="site-rightbar"></div></div>
   </div>
 
-  <div class="marquee-bar">
-    ☆ ☆ ☆ &nbsp; добро пожаловать на MRO — не забудь подписать гостевую книгу!! &nbsp; ☆ ☆ ☆
-  </div>
-  <table id="navbar">
-    <tr>
-      <td><a href="index.html">Главная</a></td>
-      <td><a href="about.html">О Мари</a></td>
-      <td><a href="news.html">Новости</a></td>
-      <td><a href="discography.html">Дискография</a></td>
-      <td class="nav-current"><a href="gallery.html">Галерея</a></td>
-      <td><a href="poll.html">Опросы</a></td>
-      <td><a href="faq.html">FAQ</a></td>
-      <td><a href="blog.html">Блог</a></td>
-      <td><a href="guestbook.html">Гостевая</a></td>
-      <td><a href="contact.html">Контакты</a></td>
-    </tr>
-  </table>
-
-  <div id="content">
-
-    <table id="layout-table">
-      <tr>
-        <td id="sidebar">
-          <h3>★ О сайте</h3>
-          <p>Онлайн с: 14 марта 2001<br>
-          Вебмастер: [твой ник]<br>
-          Лучше всего смотреть в 800x600</p>
-
-          <h3>★ Последнее обновление</h3>
-          <p>14.03.2001 — добавлены новые фото в галерею!</p>
-
-          <h3>★ Опрос недели</h3>
-          <div class="mini-poll">
-            <p style="margin:0 0 4px 0;"><b>Какой альбом Мари твой любимый?</b></p>
-            <form>
-              <label><input type="radio" name="minipoll"> [Альбом 1]</label>
-              <label><input type="radio" name="minipoll"> [Альбом 2]</label>
-              <label><input type="radio" name="minipoll"> [Альбом 3]</label>
-              <label><input type="radio" name="minipoll"> [Альбом 4]</label>
-              <input type="submit" value="Голосовать">
-            </form>
-            <a class="mini-archive-link" href="poll.html">→ архив опросов / результаты</a>
-          </div>
-
-          <h3>★ Ссылки</h3>
-          <div class="mini-links">
-            <b style="color:#ffff66; font-size:11px;">Официальные:</b>
-            <a href="#">Сайт Мари</a>
-            <a href="#">Страница лейбла</a>
-            <b style="color:#ffff66; font-size:11px;">Партнёры:</b>
-            <div class="button88">[Fansite<br>Name]</div>
-            <div class="button88">[Fansite<br>Name]</div>
-          </div>
-        </td>
-
-        <td id="main-col">
-          <h2>Галерея ♥</h2>
-          <div class="content-box">
-            <p>Все фото кликабельны — открывают полный размер. Пожалуйста, не выкладывай фото с этого сайта на других сайтах без ссылки на MRO! Новые фото добавляются каждую неделю (ну, я стараюсь ;)).</p>
-          </div>
-
-          <h3>★ Категории</h3>
-          <p style="font-size:12px;">
-            <a href="#photoshoots">Фотосессии</a> &middot;
-            <a href="#concerts">Концерты</a> &middot;
-            <a href="#events">Мероприятия / премии</a> &middot;
-            <a href="#candids">Кэндиды</a> &middot;
-            <a href="#scans">Сканы из журналов</a>
-          </p>
-
-          <div class="sparkle-divider">✦ ✧ ✦ ✧ ✦</div>
-
-          <a name="photoshoots"></a>
-          <h3>Фотосессии</h3>
-          <div class="gallery-grid">
-            <div class="gallery-row">
-              <div class="thumb">
-                <a href="images/photo1_full.jpg"><img src="images/photo1_thumb.jpg" alt="Мари, фотосессия 1"></a>
-                <div class="cap">фотосессия, 2001</div>
-              </div>
-              <div class="thumb">
-                <a href="images/photo2_full.jpg"><img src="images/photo2_thumb.jpg" alt="Мари, фотосессия 2"></a>
-                <div class="cap">обложка журнала</div>
-              </div>
-              <div class="thumb">
-                <a href="images/photo3_full.jpg"><img src="images/photo3_thumb.jpg" alt="Мари, фотосессия 3"></a>
-                <div class="cap">промо-фото альбома</div>
-              </div>
-            </div>
-          </div>
-
-          <a name="concerts"></a>
-          <h3>Концерты</h3>
-          <div class="gallery-grid">
-            <div class="gallery-row">
-              <div class="thumb">
-                <a href="images/concert1_full.jpg"><img src="images/concert1_thumb.jpg" alt="Концерт 1"></a>
-                <div class="cap">тур, весна 2001</div>
-              </div>
-              <div class="thumb">
-                <a href="images/concert2_full.jpg"><img src="images/concert2_thumb.jpg" alt="Концерт 2"></a>
-                <div class="cap">выступление на фестивале</div>
-              </div>
-              <div class="thumb">
-                <a href="images/concert3_full.jpg"><img src="images/concert3_thumb.jpg" alt="Концерт 3"></a>
-                <div class="cap">с бэк-вокалистками</div>
-              </div>
-            </div>
-          </div>
-
-          <a name="events"></a>
-          <h3>Мероприятия / премии</h3>
-          <div class="gallery-grid">
-            <div class="gallery-row">
-              <div class="thumb">
-                <a href="images/event1_full.jpg"><img src="images/event1_thumb.jpg" alt="Мероприятие 1"></a>
-                <div class="cap">на красной дорожке</div>
-              </div>
-              <div class="thumb">
-                <a href="images/event2_full.jpg"><img src="images/event2_thumb.jpg" alt="Мероприятие 2"></a>
-                <div class="cap">церемония награждения</div>
-              </div>
-              <div class="thumb">
-                <a href="images/event3_full.jpg"><img src="images/event3_thumb.jpg" alt="Мероприятие 3"></a>
-                <div class="cap">интервью для ТВ</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="under-construction">⚠ разделы "Кэндиды" и "Сканы из журналов" скоро! ⚠</div>
-        </td>
-      </tr>
-    </table>
-
-  </div>
-
-  <div id="footer">
-    <p>© 2001 MarieRichardOnline.com — фан-сайт, создан не в коммерческих целях.<br>
-    Все фото принадлежат их правообладателям.</p>
-    <p>вы посетитель номер <span class="counter">003417</span></p>
-    <p><a href="contact.html">Контакты</a></p>
-  </div>
+  <div id="site-footer"></div>
 
 </div>
-<script type="module">
-  import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
-  new fairyDustCursor({
-    colors: ["#ff66cc", "#ffff66", "#66ffff", "#cc99ff"],
-    fairySymbol: "★"
-  });
-</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="mro-data.js"></script>
+<script src="include.js"></script>
+  <script type="module">
+    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    new fairyDustCursor({
+      colors: ["#ff2d95", "#fff34d", "#ff8fc7", "#c2185b"],
+      fairySymbol: "★"
+    });
+  </script>
+
 </body>
 </html>
