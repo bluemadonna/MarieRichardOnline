@@ -1,0 +1,41 @@
+{
+  "header": {
+    "tagline": "your #1 unofficial Marie Richard fan page!"
+  },
+  "announce": {
+    "text": "★★★ NEW!!! Photos from the latest show ★★★ Sign the guestbook!!! ★★★"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Marie",
+    "news": "News",
+    "discography": "Discography",
+    "lyrics": "Lyrics",
+    "gallery": "Gallery",
+    "polls": "Polls",
+    "blog": "Blog",
+    "guestbook": "Guestbook",
+    "contact": "Contact"
+  },
+  "sidebar": {
+    "menu_title": "MENU",
+    "about_title": "ABOUT SITE",
+    "about_body": "Online since: March 14, 2001<br>Webmaster: [your nickname]",
+    "visitors_title": "VISITORS",
+    "visitor_prefix": "you are visitor #"
+  },
+  "rightbar": {
+    "poll_title": "POLL OF THE WEEK",
+    "poll_question": "What's your favorite Marie album?",
+    "vote_btn": "Vote",
+    "archive_link": "→ poll archive / results",
+    "links_title": "LINKS",
+    "official_label": "Official:",
+    "marie_site": "Marie's site",
+    "label_site": "Label page",
+    "affiliates_label": "Affiliates:"
+  },
+  "footer": {
+    "text": "© 2001 MarieRichardOnline.com — a non-commercial fan site.<br>All photos belong to their respective owners."
+  }
+}
