@@ -1,9 +1,9 @@
   <div class="panel">
-    <div class="panel-title">★ <span data-lang="ru">ОПРОС НЕДЕЛИ</span><span data-lang="en">POLL OF THE WEEK</span></div>
+    <div class="panel-title">★ <span data-i18n="rightbar.poll_title">ОПРОС НЕДЕЛИ</span></div>
     <div class="panel-body">
       <div class="mini-poll" id="mini-poll-widget" data-poll-id="favorite-album">
         <p style="margin:0 0 4px 0;">
-          <b><span data-lang="ru">Какой альбом Мари твой любимый?</span><span data-lang="en">What's your favorite Marie album?</span></b>
+          <b data-i18n="rightbar.poll_question">Какой альбом Мари твой любимый?</b>
         </p>
         <div id="mini-poll-options">
           <label><input type="radio" name="minipoll" value="Album 1"> [Album 1]</label>
@@ -12,30 +12,22 @@
           <label><input type="radio" name="minipoll" value="Album 4"> [Album 4]</label>
         </div>
         <button type="button" onclick="MRO.submitMiniVote()">
-          <span data-lang="ru">Голосовать</span><span data-lang="en">Vote</span>
+          <span data-i18n="rightbar.vote_btn">Голосовать</span>
         </button>
         <div class="mini-poll-results" id="mini-poll-results"></div>
-        <a class="mini-archive-link" href="poll.html">
-          <span data-lang="ru">→ архив опросов / результаты</span><span data-lang="en">→ poll archive / results</span>
-        </a>
+        <a class="mini-archive-link" href="poll.html" data-i18n="rightbar.archive_link">→ архив опросов / результаты</a>
       </div>
     </div>
   </div>
 
   <div class="panel">
-    <div class="panel-title">
-      <span data-lang="ru">ССЫЛКИ</span><span data-lang="en">LINKS</span>
-    </div>
+    <div class="panel-title" data-i18n="rightbar.links_title">ССЫЛКИ</div>
     <div class="panel-body">
       <div class="mini-links">
-        <b style="color:var(--pink-bar); font-size:11px;">
-          <span data-lang="ru">Официальные:</span><span data-lang="en">Official:</span>
-        </b>
-        <a href="#"><span data-lang="ru">Сайт Мари</span><span data-lang="en">Marie's site</span></a>
-        <a href="#"><span data-lang="ru">Страница лейбла</span><span data-lang="en">Label page</span></a>
-        <b style="color:var(--pink-bar); font-size:11px;">
-          <span data-lang="ru">Партнёры:</span><span data-lang="en">Affiliates:</span>
-        </b>
+        <b style="color:var(--pink-bar); font-size:11px;" data-i18n="rightbar.official_label">Официальные:</b>
+        <a href="#" data-i18n="rightbar.marie_site">Сайт Мари</a>
+        <a href="#" data-i18n="rightbar.label_site">Страница лейбла</a>
+        <b style="color:var(--pink-bar); font-size:11px;" data-i18n="rightbar.affiliates_label">Партнёры:</b>
         <div class="button88">[Fansite<br>Name]</div>
         <div class="button88">[Fansite<br>Name]</div>
       </div>

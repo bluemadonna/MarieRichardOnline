@@ -116,8 +116,6 @@ h1, h2, h3, .brand-font {
   background: var(--pink-bar);
   color: #fff;
 }
-body.lang-en [data-lang="ru"] { display: none !important; }
-body.lang-ru [data-lang="en"] { display: none !important; }
 
 /* ---------- 3-column grid layout ---------- */
 #page-grid {
@@ -349,8 +347,9 @@ table.info-table td { background: #fff; }
   /* "пробиваем" обёртки левой колонки насквозь, чтобы
      каждая панель внутри могла иметь свой order */
   #leftbar, #site-leftbar { display: contents; }
-  .panel-menu { order: 1; width: 100%; box-sizing: border-box; }
+  .panel-menu { order: 1; width: 100%; box-sizing: border-box; margin-bottom: 10px; }
   #main-col { order: 2; }
+  #main-col > h2:first-child { margin-top: 0; }
   .panel-about, .panel-visitors { order: 3; width: 100%; box-sizing: border-box; }
   #rightbar { order: 4; }
 
