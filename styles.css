@@ -344,10 +344,15 @@ table.info-table td { background: #fff; }
   #header h1 { font-size: 28px; }
 
   #page-grid { display: flex; flex-direction: column; padding: 10px; }
-  #leftbar, #rightbar, #main-col { width: 100%; box-sizing: border-box; }
-  #leftbar { order: 1; }
+  #rightbar, #main-col { width: 100%; box-sizing: border-box; }
+
+  /* "пробиваем" обёртки левой колонки насквозь, чтобы
+     каждая панель внутри могла иметь свой order */
+  #leftbar, #site-leftbar { display: contents; }
+  .panel-menu { order: 1; width: 100%; box-sizing: border-box; }
   #main-col { order: 2; }
-  #rightbar { order: 3; }
+  .panel-about, .panel-visitors { order: 3; width: 100%; box-sizing: border-box; }
+  #rightbar { order: 4; }
 
   /* меню сворачивается за заголовком на мобильных */
   .menu-hamburger { display: inline; }
