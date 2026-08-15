@@ -1,5 +1,5 @@
 // меняем TOUR_DATE
-var TOUR_DATE = '2027-09-15T19:00:00'; 
+var TOUR_DATE = '2027-09-15T16:00:00'; 
 var TOUR_LABEL = 'до нового тура'; 
 
 window.initCountdown = function () { 
