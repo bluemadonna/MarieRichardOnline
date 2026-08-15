@@ -1,5 +1,5 @@
 var TOUR_DATE = '2027-09-14T19:00:00'; 
-var TOUR_LABEL = 'до нового тура'; 
+var TOUR_LABEL = 'До альбома'; 
 
 window.initCountdown = function () { 
     var el = document.getElementById('countdown-text'); 
@@ -16,7 +16,7 @@ window.initCountdown = function () {
         
         // Если дата не распозналась или время вышло
         if (isNaN(diff) || diff <= 0) { 
-            el.textContent = 'Тур уже начался! ♥'; 
+            el.textContent = 'Альбом уже вышел! ♥'; 
             clearInterval(window.mroCountdownInterval); 
             return; 
         } 
