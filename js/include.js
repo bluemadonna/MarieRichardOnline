@@ -38,7 +38,9 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadInclude("site-header", "header.html");
+  loadInclude("site-header", "header.html", function () {
+    if (window.initCountdown) initCountdown();
+  });
   loadInclude("site-leftbar", "leftbar.html", function () {
     highlightCurrentMenu();
     if (window.MRO) {
@@ -49,9 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
   loadInclude("site-rightbar", "rightbar.html", function () {
     if (window.MRO && MRO.initMiniPoll) MRO.initMiniPoll();
     if (window.initPlayer) initPlayer();
-  });
-  loadInclude("site-countdown", "countdown.html", function () {
-    if (window.initCountdown) initCountdown();
   });
   loadInclude("site-footer", "footer.html");
 });
