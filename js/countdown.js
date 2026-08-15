@@ -10,7 +10,7 @@ window.initCountdown = function () {
 
     var target = new Date(TOUR_DATE).getTime(); 
 
-    // Исправленная функция склонения слов
+    // Исправленная функция: теперь все индексы на месте
     function pluralize(number, titles) {
         var cases =;
         return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
