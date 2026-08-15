@@ -1,13 +1,11 @@
 :root {
-  --pink-light: #ffe3f1;
-  --pink-box: #ffffff;
-  --pink-header-1: #ff8fc7;
-  --pink-header-2: #ff2d95;
-  --pink-bar: #ff1f8f;
-  --pink-accent: #e6007a;
-  --pink-border: #ff69b4;
-  --text-dark: #4a1035;
-  --yellow: #fff34d;
+	--pink-light: #ffe3f1;
+    --white-box: #ffffff;
+    --pink-bar: #d6146a;
+    --pink-accent: #ff0087;
+    --pink-border: #ffaad4;
+    --text-dark: #a01050;
+    --yellow: #fff34d;
 }
 
 html {
@@ -27,7 +25,7 @@ body {
 }
 
 a:link, a:visited { color: var(--pink-accent); text-decoration: none; }
-a:hover { color: #a01050; text-decoration: underline; }
+a:hover { color: var(--text-dark); text-decoration: underline; }
 
 h1, h2, h3, .brand-font {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
@@ -46,37 +44,36 @@ h1, h2, h3, .brand-font {
 
 /* ---------- header / banner ---------- */
 #header {
-  position: relative;
-  background: linear-gradient(135deg, var(--pink-header-1), var(--pink-header-2));
+  position: relative;	
+  text-align: center;	
+  background-image: url('../images/header-bg.jpg');
+  background-size: auto;
+  background-repeat: repeat;
+  min-height: 100%;
   padding: 18px 20px 14px 20px;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden;  
 }
 #header h1 {
-  color: #fff;
+  color: var(--pink-accent);
   font-size: 40px;
   font-weight: 800;
   margin: 6px 0 2px 0;
   text-shadow: 2px 2px 0 rgba(150,0,80,0.4);
 }
 #header .tagline {
-  color: #ffe6f4;
+  color: var(--text-dark);
   font-family: 'Comic Sans MS', cursive;
   font-size: 14px;
   font-style: italic;
+  font-weight: bold;
   margin-bottom: 8px;
-}
-#header .sparkle {
-  position: absolute;
-  color: #fff;
-  font-size: 18px;
-  opacity: 0.9;
 }
 
 /* ---------- announce bar ---------- */
 .announce-bar {
   background: var(--yellow);
-  color: var(--pink-bar);
+  color: var(--pink-accent);
   font-family: 'Comic Sans MS', cursive;
   font-weight: 700;
   font-size: 12px;
@@ -114,7 +111,7 @@ h1, h2, h3, .brand-font {
 /* ---------- countdown bar ---------- */
 .countdown-bar {
   background: var(--pink-bar);
-  color: #fff;
+  color: var(--pink-light);
   font-family: 'Comic Sans MS', cursive;
   font-size: 13px;
   font-weight: 700;
@@ -216,7 +213,7 @@ h1, h2, h3, .brand-font {
 }
 
 .panel {
-  background: var(--pink-box);
+  background: var(--white-box);
   border: 1px solid var(--pink-border);
   margin-bottom: 14px;
 }
@@ -260,15 +257,15 @@ h1, h2, h3, .brand-font {
 
 /* ---------- counter ---------- */
 .visitor-counter-box {
-  background: #fff;
-  color: var(--pink-bar);
+  background: var(--text-dark);
+  color: var(--yellow);
   font-family: "Courier New", monospace;
   font-size: 16px;
   letter-spacing: 3px;
   text-align: center;
   font-weight: bold;
   padding: 6px;
-  border: 1px solid #333;
+  border: 1px solid var(--pink-border);
 }
 
 /* ---------- main column ---------- */
@@ -283,7 +280,7 @@ h1, h2, h3, .brand-font {
   font-size: 15px;
 }
 .content-box {
-  background: var(--pink-box);
+  background: var(--white-box);
   border: 1px solid var(--pink-border);
   padding: 10px 14px;
   margin-bottom: 14px;
@@ -294,9 +291,13 @@ h1, h2, h3, .brand-font {
   margin: 14px 0;
 }
 .sparkle-divider {
-  text-align: center;
-  color: var(--pink-accent);
-  letter-spacing: 6px;
+  display: block;
+  width: 100%;
+  height: 25px;
+  background-image: url('../images/divider.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 14px 0;
 }
 
@@ -359,7 +360,7 @@ h1, h2, h3, .brand-font {
 .pagination-controls .disabled { opacity: 0.4; pointer-events: none; }
 
 /* ---------- guestbook ---------- */
-.gb-entry { background: var(--pink-box); border: 1px dashed var(--pink-border); padding: 8px 12px; margin-bottom: 10px; }
+.gb-entry { background: var(--white-box); border: 1px dashed var(--pink-border); padding: 8px 12px; margin-bottom: 10px; }
 .gb-name { color: var(--pink-bar); font-weight: bold; font-family: 'Comic Sans MS', cursive; }
 .gb-date { color: #a9698f; font-size: 11px; }
 .gb-form { background: #fff; border: 2px ridge var(--pink-border); padding: 12px; margin-top: 16px; }
