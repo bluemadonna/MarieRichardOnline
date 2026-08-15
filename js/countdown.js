@@ -1,5 +1,5 @@
 // меняем TOUR_DATE
-var TOUR_DATE = '2027-09-15T16:00:00'; 
+var TOUR_DATE = '2027-09-15T19:00:00'; 
 var TOUR_LABEL = 'до нового тура'; 
 
 window.initCountdown = function () { 
@@ -10,7 +10,7 @@ window.initCountdown = function () {
 
     var target = new Date(TOUR_DATE).getTime(); 
 
-    // Функция для склонения слов (принимает число и массив из 3 форм слова)
+    // Исправленная функция склонения слов
     function pluralize(number, titles) {
         var cases =;
         return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
@@ -35,13 +35,11 @@ window.initCountdown = function () {
             return String(n).padStart(2, '0'); 
         } 
 
-        // Получаем правильные окончания для каждого числа
         var dText = pluralize(days, ['день', 'дня', 'дней']);
         var hText = pluralize(hours, ['час', 'часа', 'часов']);
         var mText = pluralize(minutes, ['минута', 'минуты', 'минут']);
         var sText = pluralize(seconds, ['секунда', 'секунды', 'секунд']);
 
-        // Выводим текст. Для часов, минут и секунд оставлен pad(), чтобы сохранять красивый вид (01, 02)
         el.textContent = days + ' ' + dText + ' ' + 
                          pad(hours) + ' ' + hText + ' ' + 
                          pad(minutes) + ' ' + mText + ' ' + 
