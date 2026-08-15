@@ -48,6 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   loadInclude("site-rightbar", "rightbar.html", function () {
     if (window.MRO && MRO.initMiniPoll) MRO.initMiniPoll();
+    if (window.initPlayer) initPlayer();
+  });
+  loadInclude("site-countdown", "countdown.html", function () {
+    if (window.initCountdown) initCountdown();
   });
   loadInclude("site-footer", "footer.html");
 });

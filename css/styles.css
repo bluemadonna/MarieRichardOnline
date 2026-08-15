@@ -93,6 +93,49 @@ h1, h2, h3, .brand-font {
   border-bottom: 2px solid #c2185b;
 }
 
+/* ---------- countdown bar ---------- */
+.countdown-bar {
+  background: var(--pink-bar);
+  color: #fff;
+  font-family: 'Baloo 2', cursive;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  padding: 7px 8px;
+  letter-spacing: 0.5px;
+}
+#countdown-text {
+  color: var(--yellow);
+  font-family: "Courier New", monospace;
+  font-weight: normal;
+}
+
+/* ---------- retro player ---------- */
+.mro-player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.player-play-btn {
+  background: var(--pink-bar);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.player-play-btn:hover { background: #a01050; }
+.player-title {
+  font-size: 11px;
+  color: var(--text-dark);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /* ---------- lang toggle ---------- */
 .lang-toggle {
   position: absolute;
@@ -349,14 +392,15 @@ table.info-table td { background: #fff; }
   #leftbar, #site-leftbar, #rightbar, #site-rightbar { display: contents; }
 
   /* порядок на мобильных: меню → контент → опрос недели →
-     о сайте → ссылки → посетители */
+     плеер → о сайте → ссылки → посетители */
   .panel-menu { order: 1; width: 100%; box-sizing: border-box; margin-bottom: 10px; }
   #main-col { order: 2; }
   #main-col > h2:first-child { margin-top: 0; }
   .panel-poll { order: 3; width: 100%; box-sizing: border-box; }
-  .panel-about { order: 4; width: 100%; box-sizing: border-box; }
-  .panel-links { order: 5; width: 100%; box-sizing: border-box; }
-  .panel-visitors { order: 6; width: 100%; box-sizing: border-box; }
+  .panel-player { order: 4; width: 100%; box-sizing: border-box; }
+  .panel-about { order: 5; width: 100%; box-sizing: border-box; }
+  .panel-links { order: 6; width: 100%; box-sizing: border-box; }
+  .panel-visitors { order: 7; width: 100%; box-sizing: border-box; }
 
   /* меню сворачивается за заголовком на мобильных */
   .menu-hamburger { display: inline; }
