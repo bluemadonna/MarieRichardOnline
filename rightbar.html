@@ -1,9 +1,9 @@
   <div class="panel panel-poll">
-    <div class="panel-title">★ <span data-i18n="rightbar.poll_title">ОПРОС НЕДЕЛИ</span></div>
+    <div class="panel-title">★ <span>ОПРОС НЕДЕЛИ</span></div>
     <div class="panel-body">
       <div class="mini-poll" id="mini-poll-widget" data-poll-id="favorite-album">
         <p style="margin:0 0 4px 0;">
-          <b data-i18n="rightbar.poll_question">Какой альбом Мари твой любимый?</b>
+          <b>Какой альбом Мари твой любимый?</b>
         </p>
         <div id="mini-poll-options">
           <label><input type="radio" name="minipoll" value="Album 1"> [Album 1]</label>
@@ -12,33 +12,39 @@
           <label><input type="radio" name="minipoll" value="Album 4"> [Album 4]</label>
         </div>
         <button type="button" onclick="MRO.submitMiniVote()">
-          <span data-i18n="rightbar.vote_btn">Голосовать</span>
+          <span>Голосовать</span>
         </button>
         <div class="mini-poll-results" id="mini-poll-results"></div>
-        <a class="mini-archive-link" href="poll.html" data-i18n="rightbar.archive_link">→ архив опросов / результаты</a>
+        <a class="mini-archive-link" href="poll.html">→ архив опросов / результаты</a>
       </div>
     </div>
   </div>
 
   <div class="panel panel-player">
-    <div class="panel-title">♪ <span data-i18n="rightbar.player_title">МУЗЫКА</span></div>
+    <div class="panel-title">♪ <span>МУЗЫКА</span></div>
     <div class="panel-body">
       <div class="mro-player">
-        <button type="button" id="player-btn" class="player-play-btn">▶</button>
-        <div class="player-title" id="player-title">загрузка трека...</div>
+        <button type="button" id="player-btn" class="player-play-btn">
+          <span class="icon-play">▶</span>
+          <span class="icon-pause">❚❚</span>
+        </button>
+        <div class="player-info">
+          <div class="player-title" id="player-title">загрузка трека...</div>
+          <div class="eq-bars" id="eq-bars"><span></span><span></span><span></span><span></span></div>
+        </div>
       </div>
       <audio id="mro-audio" loop></audio>
     </div>
   </div>
 
   <div class="panel panel-links">
-    <div class="panel-title" data-i18n="rightbar.links_title">ССЫЛКИ</div>
+    <div class="panel-title">ССЫЛКИ</div>
     <div class="panel-body">
       <div class="mini-links">
-        <b style="color:var(--pink-bar); font-size:11px;" data-i18n="rightbar.official_label">Официальные:</b>
-        <a href="#" data-i18n="rightbar.marie_site">Сайт Мари</a>
-        <a href="#" data-i18n="rightbar.label_site">Страница лейбла</a>
-        <b style="color:var(--pink-bar); font-size:11px;" data-i18n="rightbar.affiliates_label">Партнёры:</b>
+        <b style="color:var(--pink-bar); font-size:11px;">Официальные:</b>
+        <a href="#">Сайт Мари</a>
+        <a href="#">Страница лейбла</a>
+        <b style="color:var(--pink-bar); font-size:11px;">Партнёры:</b>
         <div class="button88">[Fansite<br>Name]</div>
         <div class="button88">[Fansite<br>Name]</div>
       </div>

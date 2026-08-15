@@ -11,7 +11,7 @@
 // сразу после — скрипт сам найдёт и заполнит его.
 // ===================================================
 
-document.addEventListener("DOMContentLoaded", function () {
+window.initPaginate = function () {
   var containers = document.querySelectorAll(".paginated-posts");
 
   containers.forEach(function (container) {
@@ -59,4 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showPage(1);
   });
-});
+};
+
+document.addEventListener("DOMContentLoaded", window.initPaginate);

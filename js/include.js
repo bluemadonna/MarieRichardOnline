@@ -14,7 +14,6 @@ function loadInclude(elementId, url, afterLoad) {
       var el = document.getElementById(elementId);
       if (el) el.innerHTML = html;
       if (afterLoad) afterLoad();
-      if (window.I18N) I18N.applyTranslations();
     })
     .catch(function (err) {
       console.error("Не удалось загрузить " + url, err);

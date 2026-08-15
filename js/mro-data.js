@@ -130,7 +130,12 @@ var MRO = (function () {
         var html = "";
         res.data.forEach(function (row) {
           var d = new Date(row.created_at);
-          var dateStr = d.toLocaleDateString("ru-RU") + ", " + d.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" });
+          // день/месяц/время настоящие, год всегда "2001" для атмосферности
+          var dd = String(d.getDate()).padStart(2, "0");
+          var mm = String(d.getMonth() + 1).padStart(2, "0");
+          var hh = String(d.getHours()).padStart(2, "0");
+          var min = String(d.getMinutes()).padStart(2, "0");
+          var dateStr = dd + "." + mm + ".2001, " + hh + ":" + min;
           html += '<div class="gb-entry">' +
             '<span class="gb-name">★ ' + escapeHtml(row.name || "Anonymous") + '</span>' +
             '&nbsp;<span class="gb-date">' + dateStr + '</span>' +

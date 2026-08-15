@@ -16,6 +16,7 @@ window.initPlayer = function () {
   var audio = document.getElementById("mro-audio");
   var btn = document.getElementById("player-btn");
   var titleEl = document.getElementById("player-title");
+  var eqBars = document.getElementById("eq-bars");
   if (!audio || !btn) return;
 
   audio.src = TRACK_SRC;
@@ -32,8 +33,14 @@ window.initPlayer = function () {
     }
   });
 
-  audio.addEventListener("play", function () { btn.textContent = "⏸"; });
-  audio.addEventListener("pause", function () { btn.textContent = "▶"; });
+  audio.addEventListener("play", function () {
+    btn.classList.add("playing");
+    if (eqBars) eqBars.classList.add("playing");
+  });
+  audio.addEventListener("pause", function () {
+    btn.classList.remove("playing");
+    if (eqBars) eqBars.classList.remove("playing");
+  });
   audio.addEventListener("error", function () {
     if (titleEl) titleEl.textContent = "трек не найден — положи файл в sounds/";
   });
