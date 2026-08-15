@@ -10,10 +10,21 @@ window.initCountdown = function () {
 
     var target = new Date(TOUR_DATE).getTime(); 
 
-    // Исправленная функция: теперь все индексы на месте
+
     function pluralize(number, titles) {
-        var cases =;
-        return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+        var n1 = number % 10;
+        var n100 = number % 100;
+        
+        if (n100 >= 11 && n100 <= 19) {
+            return titles[2]; // дней, часов, минут, секунд
+        }
+        if (n1 == 1) {
+            return titles[0]; // день, час, минута, секунда
+        }
+        if (n1 >= 2 && n1 <= 4) {
+            return titles[1]; // дня, часа, минуты, секунды
+        }
+        return titles[2]; // дней, часов, минут, секунд
     }
 
     function tick() { 
