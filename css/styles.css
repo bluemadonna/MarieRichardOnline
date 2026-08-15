@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap');
+
 :root {
 	--pink-light: #ffe3f1;
     --white-box: #ffffff;
@@ -28,7 +30,7 @@ a:link, a:visited { color: var(--pink-accent); text-decoration: none; }
 a:hover { color: var(--text-dark); text-decoration: underline; }
 
 h1, h2, h3, .brand-font {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Baloo 2', 'Comic Sans MS', cursive;
 }
 
 /* ---------- page wrapper ---------- */
@@ -63,7 +65,7 @@ h1, h2, h3, .brand-font {
 }
 #header .tagline {
   color: var(--text-dark);
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Baloo 2', 'Comic Sans MS', cursive;
   font-size: 14px;
   font-style: italic;
   font-weight: bold;
@@ -74,7 +76,7 @@ h1, h2, h3, .brand-font {
 .announce-bar {
   background: var(--yellow);
   color: var(--pink-accent);
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Baloo 2', 'Comic Sans MS', cursive;
   font-weight: 700;
   font-size: 12px;
   padding: 6px 0;
@@ -112,7 +114,7 @@ h1, h2, h3, .brand-font {
 .countdown-bar {
   background: var(--pink-bar);
   color: var(--pink-light);
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Baloo 2', 'Comic Sans MS', cursive;
   font-size: 13px;
   font-weight: 700;
   text-align: center;
@@ -220,7 +222,7 @@ h1, h2, h3, .brand-font {
 .panel-title {
   background: var(--pink-bar);
   color: #fff;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Baloo 2', 'Comic Sans MS', cursive;
   font-weight: 700;
   font-size: 13px;
   padding: 6px 10px;
@@ -312,7 +314,7 @@ h1, h2, h3, .brand-font {
   border: none;
   border-radius: 3px;
   padding: 4px 12px;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Baloo 2', 'Comic Sans MS', cursive;
   font-size: 11px;
   cursor: pointer;
 }
@@ -346,11 +348,11 @@ h1, h2, h3, .brand-font {
 
 /* ---------- blog / news posts ---------- */
 .post { border-bottom: 1px dashed var(--pink-border); padding-bottom: 12px; margin-bottom: 12px; }
-.post-title { font-family: 'Comic Sans MS', cursive; color: var(--pink-bar); font-size: 15px; }
+.post-title { font-family: 'Baloo 2', 'Comic Sans MS', cursive; color: var(--pink-bar); font-size: 15px; }
 .post-meta { font-size: 11px; color: #a9698f; margin-bottom: 6px; }
 
 /* ---------- pagination ---------- */
-.pagination-controls { text-align: center; margin: 16px 0 6px 0; font-family: 'Comic Sans MS', cursive; font-size: 12px; }
+.pagination-controls { text-align: center; margin: 16px 0 6px 0; font-family: 'Baloo 2', 'Comic Sans MS', cursive; font-size: 12px; }
 .pagination-controls .page-link {
   display: inline-block; margin: 0 3px; padding: 3px 9px;
   border: 1px solid var(--pink-border); background: #fff; color: var(--pink-accent); text-decoration: none;
@@ -361,7 +363,7 @@ h1, h2, h3, .brand-font {
 
 /* ---------- guestbook ---------- */
 .gb-entry { background: var(--white-box); border: 1px dashed var(--pink-border); padding: 8px 12px; margin-bottom: 10px; }
-.gb-name { color: var(--pink-bar); font-weight: bold; font-family: 'Comic Sans MS', cursive; }
+.gb-name { color: var(--pink-bar); font-weight: bold; font-family: 'Baloo 2', 'Comic Sans MS', cursive; }
 .gb-date { color: #a9698f; font-size: 11px; }
 .gb-form { background: #fff; border: 2px ridge var(--pink-border); padding: 12px; margin-top: 16px; }
 .gb-form label { display: block; margin-top: 6px; color: var(--pink-bar); font-size: 12px; }
@@ -371,7 +373,7 @@ h1, h2, h3, .brand-font {
 }
 .gb-form input[type="submit"] {
   margin-top: 8px; background: var(--pink-bar); color: #fff; font-weight: bold; border: none; border-radius: 3px;
-  padding: 5px 16px; font-family: 'Comic Sans MS', cursive; cursor: pointer;
+  padding: 5px 16px; font-family: 'Baloo 2', 'Comic Sans MS', cursive; cursor: pointer;
 }
 .gb-form input[type="submit"]:hover { background: #a01050; }
 .gb-status { font-size: 11px; margin-top: 6px; }
@@ -379,7 +381,7 @@ h1, h2, h3, .brand-font {
 /* ---------- info table ---------- */
 table.info-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
 table.info-table td, table.info-table th { border: 1px solid var(--pink-border); padding: 5px 8px; font-size: 12px; }
-table.info-table th { background: var(--pink-bar); color: #fff; font-family: 'Comic Sans MS', cursive; }
+table.info-table th { background: var(--pink-bar); color: #fff; font-family: 'Baloo 2', 'Comic Sans MS', cursive; }
 table.info-table td { background: #fff; }
 
 /* ---------- under construction ---------- */
@@ -425,7 +427,7 @@ table.info-table td { background: #fff; }
   line-height: 30px;
   text-align: center;
   cursor: pointer;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Baloo 2', 'Comic Sans MS', cursive;
   user-select: none;
 }
 .lightbox-close:hover { background: #a01050; }
@@ -466,4 +468,11 @@ table.info-table td { background: #fff; }
     display: block; width: 100%; box-sizing: border-box;
   }
   .gb-form input[type="text"], .gb-form input[type="email"], .gb-form textarea { width: 100%; box-sizing: border-box; }
+
+  .player-title {
+  animation: none;
+  padding-left: 0;
+  display: block;
+  text-overflow: ellipsis;
+}
 }
