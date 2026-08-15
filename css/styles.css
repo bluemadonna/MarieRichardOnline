@@ -11,7 +11,7 @@
 }
 
 html {
-  background-image: url('images/bg.gif');
+  background-image: url('../images/bg.gif');
   background-size: auto;
   background-repeat: repeat;
   min-height: 100%;
