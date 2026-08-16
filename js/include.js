@@ -1,11 +1,4 @@
-// ===================================================
-// include.js — подгружает header.html, leftbar.html,
-// rightbar.html, footer.html на каждую страницу и
-// подсвечивает активный пункт меню. Перевод текста —
-// в i18n.js (должен быть подключён раньше этого файла).
-// Работает только через http:// (GitHub Pages,
-// Cloudflare Pages, локальный сервер) — не через file://.
-// ===================================================
+/* ---------- page builder ---------- */
 
 function loadInclude(elementId, url, afterLoad) {
   fetch(url)

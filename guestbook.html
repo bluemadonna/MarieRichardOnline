@@ -17,18 +17,20 @@
     <div id="main-col">
       <h2>♥ Гостевая книга ♥</h2>
       <div class="content-box">
-        <p>Оставь сообщение! Расскажи, что думаешь о сайте, о Мари, или просто поздоровайся ♥ Пожалуйста, без спама и грубостей — это дружелюбное место для фанатов, все неподходящие сообщения будут удаляться.</p>
+        <p>Оставь запись! Расскажи, что думаешь о сайте, о Мари, или просто поздоровайся ♥ Пожалуйста, без спама и грубостей — это дружелюбное место для фанатов, все неподходящие сообщения будут удаляться.</p>
       </div>
 
       <h3>(¯`•._.★  ЗаПиСи  ★._.•´¯)</h3>
-      <div id="gb-list"><i>загрузка записей...</i></div>
+
+      <div id="gb-list"><i>Загрузка записей...</i></div>
+      <div class="pagination-controls" id="gb-pagination"></div>
 
       <div class="sparkle-divider"> </div>
 
       <h3>(¯`•._.★  ОсТаВиТь ЗаПиСь  ★._.•´¯)</h3>
       <div class="gb-form">
-        <form id="gb-form" onsubmit="MRO.submitGuestbookEntry('gb-form','gb-list'); return false;">
-          <label for="gbname">Имя / никнейм:</label>
+        <form id="gb-form" onsubmit="MRO.submitGuestbookEntry('gb-form','gb-list','gb-pagination'); return false;">
+          <label for="gbname">Имя / Никнейм:</label>
           <input type="text" id="gbname" name="gbname">
 
           <label for="gbmsg">Сообщение:</label>
@@ -51,11 +53,13 @@
 <script src="js/config.js"></script>
 <script src="js/mro-data.js"></script>
 <script src="js/include.js"></script>
+<script src="js/gallery-pagination.js"></script>
 <script src="js/router.js"></script>
 <script src="js/countdown.js"></script>
 <script src="js/player.js"></script>
+<script src="js/lightbox.js"></script>
 <script data-page-init="true">
-MRO.loadGuestbook('gb-list');
+MRO.loadGuestbook('gb-list', 'gb-pagination');
 </script>
 <script type="module" src="js/cursor.js"></script>
 

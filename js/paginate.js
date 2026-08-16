@@ -1,15 +1,4 @@
-// ===================================================
-// paginate.js — постраничная навигация для блоков постов
-// (Новости, Блог). Работает полностью на клиенте, без
-// сервера — просто прячет/показывает уже существующие
-// на странице записи. Работает и при открытии файла
-// напрямую (file://), т.к. ничего не подгружает.
-//
-// Использование: обернуть посты в
-// <div class="paginated-posts" data-per-page="10"> ... </div>
-// и добавить пустой <div class="pagination-controls"></div>
-// сразу после — скрипт сам найдёт и заполнит его.
-// ===================================================
+/* ---------- pagination for blog and news ---------- */
 
 window.initPaginate = function () {
   var containers = document.querySelectorAll(".paginated-posts");
@@ -35,27 +24,80 @@ window.initPaginate = function () {
       container.scrollIntoView({ behavior: "instant", block: "start" });
     }
 
-    function renderControls(current) {
-      if (totalPages <= 1) {
-        controls.innerHTML = "";
-        return;
-      }
-      var html = "";
-      html += '<a href="#" data-page="' + Math.max(1, current - 1) + '" class="page-link' + (current === 1 ? ' disabled' : '') + '">&laquo; назад</a>';
-      for (var p = 1; p <= totalPages; p++) {
-        html += '<a href="#" data-page="' + p + '" class="page-link' + (p === current ? ' page-current' : '') + '">' + p + '</a>';
-      }
-      html += '<a href="#" data-page="' + Math.min(totalPages, current + 1) + '" class="page-link' + (current === totalPages ? ' disabled' : '') + '">вперёд &raquo;</a>';
-      controls.innerHTML = html;
+	function renderControls(current) {
+	  if (totalPages <= 1) {
+		controls.innerHTML = "";
+		return;
+	  }
 
-      controls.querySelectorAll(".page-link").forEach(function (link) {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          var page = parseInt(this.getAttribute("data-page"), 10);
-          showPage(page);
-        });
-      });
-    }
+	  var html = "";
+
+	  html += '<a href="#" data-page="' + Math.max(1, current - 1) +
+		'" class="page-link' +
+		(current === 1 ? ' disabled' : '') +
+		'">&laquo; назад</a>';
+
+	  var pages = [];
+
+	  if (totalPages <= 5) {
+		for (var p = 1; p <= totalPages; p++) {
+		  pages.push(p);
+		}
+
+	  } else if (current <= 3) {
+		pages.push(1, 2, 3, 4, 5);
+		pages.push("...");
+		pages.push(totalPages);
+
+	  } else if (current >= totalPages - 2) {
+		pages.push(1);
+		pages.push("...");
+
+		for (var p = totalPages - 4; p <= totalPages; p++) {
+		  pages.push(p);
+		}
+
+	  } else {
+		pages.push(1);
+		pages.push("...");
+		pages.push(current - 1);
+		pages.push(current);
+		pages.push(current + 1);
+		pages.push("...");
+		pages.push(totalPages);
+	  }
+
+	  pages.forEach(function (p) {
+		if (p === "...") {
+		  html += '<span class="page-dots">...</span>';
+		} else {
+		  html += '<a href="#" data-page="' + p +
+			'" class="page-link' +
+			(p === current ? ' page-current' : '') +
+			'">' + p + '</a>';
+		}
+	  });
+
+	  html += '<a href="#" data-page="' + Math.min(totalPages, current + 1) +
+		'" class="page-link' +
+		(current === totalPages ? ' disabled' : '') +
+		'">вперёд &raquo;</a>';
+
+	  controls.innerHTML = html;
+
+	  controls.querySelectorAll(".page-link").forEach(function (link) {
+		link.addEventListener("click", function (e) {
+		  e.preventDefault();
+
+		  if (this.classList.contains("disabled")) {
+			return;
+		  }
+
+		  var page = parseInt(this.getAttribute("data-page"), 10);
+		  showPage(page);
+		});
+	  });
+	}
 
     showPage(1);
   });

@@ -1,13 +1,4 @@
-// ===================================================
-// mro-data.js — голосование в опросах и гостевая книга
-// через Supabase. Требует заполненный config.js и
-// подключённую библиотеку @supabase/supabase-js (CDN,
-// подключена в каждой странице перед этим файлом).
-//
-// Таблицы в Supabase (см. supabase_setup.sql):
-//   poll_votes(id, poll_id, option_label, created_at)
-//   guestbook_entries(id, name, message, created_at)
-// ===================================================
+/* ---------- Supabase connection ---------- */
 
 var MRO = (function () {
   var client = null;
@@ -19,11 +10,11 @@ var MRO = (function () {
 
   function notConfiguredNotice(el) {
     if (el) {
-      el.innerHTML = '<i style="color:#a9698f;">база данных ещё не подключена — заполни config.js своими данными Supabase</i>';
+      el.innerHTML = '<i style="color:#a9698f;">База данных ещё не подключена :(</i>';
     }
   }
 
-  // ---------- POLLS ----------
+/* ---------- polls ---------- */
 
   function loadPollResults(pollId, resultsEl) {
     if (!configured || !client) { notConfiguredNotice(resultsEl); return; }
@@ -45,7 +36,7 @@ var MRO = (function () {
   function renderResults(el, counts, total) {
     if (!el) return;
     if (total === 0) {
-      el.innerHTML = "<i>пока нет голосов — стань первым!</i>";
+      el.innerHTML = "<i>Пока голосов нет — стань первым!</i>";
       return;
     }
     var html = "<b>всего голосов: " + total + "</b><br>";
@@ -63,7 +54,7 @@ var MRO = (function () {
       .from("poll_votes")
       .insert([{ poll_id: pollId, option_label: optionLabel }])
       .then(function (res) {
-        if (res.error) { console.error(res.error); alert("Не удалось отправить голос."); return; }
+        if (res.error) { console.error(res.error); alert("Не удалось отправить голос :("); return; }
         loadPollResults(pollId, resultsEl);
       });
   }
@@ -78,8 +69,6 @@ var MRO = (function () {
   }
 
   function initMiniPoll() {
-    // результаты показываются только после голосования —
-    // тут ничего не грузим заранее
   }
 
   function submitFullVote(pollId, radioName, resultsElId) {
@@ -89,16 +78,15 @@ var MRO = (function () {
   }
 
   function initFullPoll(pollId, resultsElId) {
-    // результаты показываются только после голосования —
-    // тут ничего не грузим заранее
   }
 
-  // список закрытых опросов для архива: [{id: 'poll-id', question: 'текст вопроса'}, ...]
+/* ---------- archive polls list [{id: 'poll-id', question: 'текст вопроса'}, ...] ---------- */
+
   function renderPollArchive(containerId, polls) {
     var container = document.getElementById(containerId);
     if (!container) return;
     if (!polls || polls.length === 0) {
-      container.innerHTML = '<p style="font-size:12px; color:#a9698f;"><i>архив пока пуст — сюда попадут завершённые опросы</i></p>';
+      container.innerHTML = '<p style="font-size:12px; color:#a9698f;"><i>Архив пока пуст — сюда попадут завершённые опросы!</i></p>';
       return;
     }
     container.innerHTML = "";
@@ -112,11 +100,15 @@ var MRO = (function () {
     });
   }
 
-  // ---------- GUESTBOOK ----------
+/* ---------- guestbook ---------- */
 
-  function loadGuestbook(listElId) {
+  function loadGuestbook(listElId, paginationElId, perPage) {
     var listEl = document.getElementById(listElId);
+    var paginationEl = paginationElId ? document.getElementById(paginationElId) : null;
+    perPage = perPage || 7;
+
     if (!configured || !client) { notConfiguredNotice(listEl); return; }
+
     client
       .from("guestbook_entries")
       .select("name, message, created_at")
@@ -124,29 +116,104 @@ var MRO = (function () {
       .then(function (res) {
         if (res.error) { console.error(res.error); return; }
         if (res.data.length === 0) {
-          listEl.innerHTML = "<i>записей пока нет — стань первым!</i>";
+          listEl.innerHTML = "<i>Записей пока нет — стань первым!</i>";
+          if (paginationEl) paginationEl.innerHTML = "";
           return;
         }
-        var html = "";
-        res.data.forEach(function (row) {
-          var d = new Date(row.created_at);
-          // день/месяц/время настоящие, год всегда "2001" для атмосферности
-          var dd = String(d.getDate()).padStart(2, "0");
-          var mm = String(d.getMonth() + 1).padStart(2, "0");
-          var hh = String(d.getHours()).padStart(2, "0");
-          var min = String(d.getMinutes()).padStart(2, "0");
-          var dateStr = dd + "." + mm + ".2001, " + hh + ":" + min;
-          html += '<div class="gb-entry">' +
-            '<span class="gb-name">★ ' + escapeHtml(row.name || "Anonymous") + '</span>' +
-            '&nbsp;<span class="gb-date">' + dateStr + '</span>' +
-            '<p>' + escapeHtml(row.message) + '</p>' +
-            '</div>';
-        });
-        listEl.innerHTML = html;
+        renderGuestbookPage(res.data, 1, perPage, listEl, paginationEl);
       });
   }
 
-  function submitGuestbookEntry(formId, listElId) {
+  function entryHtml(row) {
+    var d = new Date(row.created_at);
+    var dd = String(d.getDate()).padStart(2, "0");
+    var mm = String(d.getMonth() + 1).padStart(2, "0");
+    var hh = String(d.getHours()).padStart(2, "0");
+    var min = String(d.getMinutes()).padStart(2, "0");
+    var dateStr = dd + "." + mm + ".2001, " + hh + ":" + min;
+    return '<div class="gb-entry">' +
+      '<span class="gb-name">★ ' + escapeHtml(row.name || "Anonymous") + '</span>' +
+      '&nbsp;<span class="gb-date">' + dateStr + '</span>' +
+      '<p>' + escapeHtml(row.message) + '</p>' +
+      '</div>';
+  }
+
+  function renderGuestbookPage(allEntries, pageNum, perPage, listEl, paginationEl) {
+    var totalPages = Math.max(1, Math.ceil(allEntries.length / perPage));
+    var start = (pageNum - 1) * perPage;
+    var pageEntries = allEntries.slice(start, start + perPage);
+
+    listEl.innerHTML = pageEntries.map(entryHtml).join("");
+
+    if (!paginationEl || totalPages <= 1) {
+      if (paginationEl) paginationEl.innerHTML = "";
+      return;
+    }
+
+    var html = "";
+
+	html += '<a href="#" data-page="' + Math.max(1, pageNum - 1) +
+	  '" class="page-link' + (pageNum === 1 ? ' disabled' : '') +
+	  '">&laquo; назад</a>';
+
+	var pages = [];
+
+	if (totalPages <= 5) {
+	  for (var p = 1; p <= totalPages; p++) {
+		pages.push(p);
+	  }
+
+	} else if (pageNum <= 3) {
+	  pages.push(1, 2, 3, 4, 5);
+	  pages.push("...");
+	  pages.push(totalPages);
+
+	} else if (pageNum >= totalPages - 2) {
+	  pages.push(1);
+	  pages.push("...");
+	  for (var p = totalPages - 4; p <= totalPages; p++) {
+		pages.push(p);
+	  }
+
+	} else {
+	  pages.push(1);
+	  pages.push("...");
+	  pages.push(pageNum - 1);
+	  pages.push(pageNum);
+	  pages.push(pageNum + 1);
+	  pages.push("...");
+	  pages.push(totalPages);
+	}
+
+	pages.forEach(function (p) {
+	  if (p === "...") {
+		html += '<span class="page-dots">...</span>';
+	  } else {
+		html += '<a href="#" data-page="' + p +
+		  '" class="page-link' +
+		  (p === pageNum ? ' page-current' : '') +
+		  '">' + p + '</a>';
+	  }
+	});
+
+	html += '<a href="#" data-page="' + Math.min(totalPages, pageNum + 1) +
+	  '" class="page-link' +
+	  (pageNum === totalPages ? ' disabled' : '') +
+	  '">вперёд &raquo;</a>';
+	
+    paginationEl.innerHTML = html;
+
+    paginationEl.querySelectorAll(".page-link").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var page = parseInt(this.getAttribute("data-page"), 10);
+        renderGuestbookPage(allEntries, page, perPage, listEl, paginationEl);
+        listEl.scrollIntoView({ behavior: "instant", block: "start" });
+      });
+    });
+  }
+
+  function submitGuestbookEntry(formId, listElId, paginationElId) {
     var form = document.getElementById(formId);
     var statusEl = document.getElementById("gb-status");
     var nameEl = form.querySelector('[name="gbname"]');
@@ -157,7 +224,7 @@ var MRO = (function () {
       return;
     }
     if (!msgEl.value.trim()) {
-      if (statusEl) statusEl.innerHTML = '<span style="color:red;">напиши что-нибудь в сообщении!</span>';
+      if (statusEl) statusEl.innerHTML = '<span style="color:red;">Нельзя отправить пустую запись!</span>';
       return;
     }
 
@@ -167,13 +234,13 @@ var MRO = (function () {
       .then(function (res) {
         if (res.error) {
           console.error(res.error);
-          if (statusEl) statusEl.innerHTML = '<span style="color:red;">не удалось отправить :( попробуй ещё раз</span>';
+          if (statusEl) statusEl.innerHTML = '<span style="color:red;">Не удалось отправить :( Попробуй ещё раз!</span>';
           return;
         }
-        if (statusEl) statusEl.innerHTML = '<span style="color:green;">спасибо за запись! ♥</span>';
+        if (statusEl) statusEl.innerHTML = '<span style="color:green;">Спасибо за запись ♥</span>';
         nameEl.value = "";
         msgEl.value = "";
-        loadGuestbook(listElId);
+        loadGuestbook(listElId, paginationElId);
       });
   }
 
@@ -183,9 +250,7 @@ var MRO = (function () {
     return div.innerHTML;
   }
 
-  // ---------- VISITOR COUNTER ----------
-  // Каждая загрузка страницы = +1 (как классические
-  // счётчики 2001 года — считают заходы, не уникальных людей)
+/* ---------- visitor counter ---------- */
 
   function recordVisit() {
     if (!configured || !client) return;

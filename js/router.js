@@ -1,17 +1,11 @@
-// ===================================================
-// router.js — AJAX-навигация между страницами сайта.
-// Клик по внутренней ссылке подгружает только контент
-// (#main-col) без полной перезагрузки страницы — поэтому
-// плеер, каунтдаун и всё остальное в шапке/сайдбарах не
-// сбрасываются при переходах между разделами.
-//
-// Если fetch не сработал (например, сайт открыт как
-// файл, не через http) — просто происходит обычный переход
-// по ссылке, ничего не ломается.
-// ===================================================
+/* ---------- ajax-navigation ---------- */
 
 function mroNavigate(url, addToHistory) {
-  fetch(url)
+  var urlObj = new URL(url, window.location.href);
+  var pageUrl = urlObj.pathname + urlObj.search;
+  var hash = urlObj.hash;
+
+  fetch(pageUrl)
     .then(function (res) { return res.text(); })
     .then(function (html) {
       var parser = new DOMParser();
@@ -19,7 +13,11 @@ function mroNavigate(url, addToHistory) {
 
       var newMain = doc.getElementById("main-col");
       var mainCol = document.getElementById("main-col");
-      if (!newMain || !mainCol) { window.location.href = url; return; }
+
+      if (!newMain || !mainCol) {
+        window.location.href = url;
+        return;
+      }
 
       mainCol.innerHTML = newMain.innerHTML;
 
@@ -30,19 +28,21 @@ function mroNavigate(url, addToHistory) {
         history.pushState({ mroUrl: url }, "", url);
       }
 
-      window.scrollTo(0, 0);
-
-      // подсветка активного пункта меню
       document.querySelectorAll("#leftbar .menu-list li").forEach(function (li) {
         li.classList.remove("menu-current");
       });
-      if (window.highlightCurrentMenu) highlightCurrentMenu();
 
-      // пагинация (если на новой странице есть посты)
-      if (window.initPaginate) initPaginate();
+		if (window.highlightCurrentMenu) {
+		  highlightCurrentMenu();
+		}
 
-      // повторный запуск служебных скриптов страницы
-      // (загрузка опроса, гостевой книги и т.п.)
+		if (window.initPaginate) {
+		  initPaginate();
+		}
+
+		if (window.initGalleryPaginate) {
+		  initGalleryPaginate();
+		}
       var initScripts = doc.querySelectorAll("script[data-page-init]");
       initScripts.forEach(function (oldScript) {
         var newScript = document.createElement("script");
@@ -50,9 +50,24 @@ function mroNavigate(url, addToHistory) {
         document.body.appendChild(newScript);
         document.body.removeChild(newScript);
       });
+
+      window.scrollTo(0, 0);
+
+      if (hash) {
+        setTimeout(function () {
+          var target = document.querySelector(hash);
+
+          if (target) {
+            target.scrollIntoView({
+              behavior: "instant",
+              block: "start"
+            });
+          }
+        }, 0);
+      }
     })
     .catch(function (err) {
-      console.error("Не удалось загрузить " + url + " через AJAX, обычный переход:", err);
+      console.error("Не удалось загрузить " + url + " через AJAX, обычный переход :(", err);
       window.location.href = url;
     });
 }
@@ -63,16 +78,39 @@ document.addEventListener("click", function (e) {
 
   var href = link.getAttribute("href");
   if (!href) return;
-  if (href.indexOf("#") === 0) return;
+
+  if (href.indexOf("#") === 0) {
+    e.preventDefault();
+
+    var target = document.getElementById(href.substring(1));
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "instant",
+        block: "start"
+      });
+
+      history.pushState(null, "", href);
+    }
+
+    return;
+  }
+
   if (href.indexOf("http://") === 0 || href.indexOf("https://") === 0) return;
   if (href.indexOf("mailto:") === 0) return;
-  if (href.slice(-5) !== ".html") return;
+
+  var url = new URL(href, window.location.href);
+
+  if (!url.pathname.endsWith(".html")) return;
 
   e.preventDefault();
   mroNavigate(href);
 });
 
 window.addEventListener("popstate", function () {
-  var page = window.location.pathname.split("/").pop() || "index.html";
-  mroNavigate(page, false);
+  var url = window.location.pathname.split("/").pop() || "index.html";
+  url += window.location.search;
+  url += window.location.hash;
+
+  mroNavigate(url, false);
 });

@@ -1,9 +1,4 @@
-// ===================================================
-// lightbox.js — открытие фото из галереи в оверлее
-// с крестиком закрытия. Работает через делегирование
-// событий, так что не завязано на конкретную разметку
-// внутри .gallery-grid.
-// ===================================================
+/* ---------- photo viewer ---------- */
 
 (function () {
   function buildOverlay() {
@@ -15,7 +10,6 @@
       '<span class="lightbox-close" onclick="closeLightbox()">&times;</span>' +
       '<img id="lightbox-img" src="" alt="">' +
       "</div>";
-    // клик по фону (не по картинке/крестику) тоже закрывает
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) closeLightbox();
     });

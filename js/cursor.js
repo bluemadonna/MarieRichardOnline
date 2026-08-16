@@ -1,6 +1,8 @@
+/* ---------- cursor ---------- */
+
 import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
 
 new fairyDustCursor({
-  colors: ["#ff2d95", "#fff34d", "#ff8fc7", "#c2185b"],
+  colors: ["#ff0087", "#ffaad4", "#a01050", "#fff34d"],
   fairySymbol: "★"
 });

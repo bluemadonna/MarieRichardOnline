@@ -1,3 +1,5 @@
+/* ---------- countdown ---------- */
+
 var TOUR_DATE = '2027-09-14T19:00:00'; 
 var TOUR_LABEL = 'До альбома'; 
 
@@ -14,7 +16,6 @@ window.initCountdown = function () {
         var now = new Date().getTime(); 
         var diff = target - now; 
         
-        // Если дата не распозналась или время вышло
         if (isNaN(diff) || diff <= 0) { 
             el.textContent = 'Альбом уже вышел! ♥'; 
             clearInterval(window.mroCountdownInterval); 
@@ -30,7 +31,7 @@ window.initCountdown = function () {
             return String(n).padStart(2, '0'); 
         } 
         
-        el.textContent = days + ' дней ' + pad(hours) + ' часов ' + pad(minutes) + ' минут ' + pad(seconds) + ' секунд'; 
+        el.textContent = days + ' д. ' + pad(hours) + ' ч. ' + pad(minutes) + ' мин. ' + pad(seconds) + ' сек.'; 
     } 
     
     tick(); 
